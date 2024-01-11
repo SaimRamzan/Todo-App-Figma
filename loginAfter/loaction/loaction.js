@@ -7,7 +7,7 @@ function getSuccessLocation(position) {
     const latitude = position.coords.latitude
     const longitude = position.coords.longitude
     console.log('latitude:', latitude,'N','longitude:', longitude,'E', );
-    const wetherApi = `https://api.weatherapi.com/v1/current.json?key=c5ada4e27ed847fe9f8110605240801 &q=${latitude},${longitude}&aqi=no
+    const wetherApi = `https://api.weatherapi.com/v1/current.json?key=c5ada4e27ed847fe9f8110605240801 &q=${latitude},${longitude}&aqi=yes
     `
     // `http://api.weatherapi.com/v1/current.json?key=c5ada4e27ed847fe9f8110605240801&q=${latitude},${longitude}&aqi=yes`;
    

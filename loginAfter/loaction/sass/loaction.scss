@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.main {
+    display: flex;
+    width: 100%;
+    .main-container {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        position: fixed;
+        display: block;
+        .task {
+            // color: white;
+            
+            width: 250px;
+            display: flex;
+            color: black;
+            column-gap: 20px;
+            border-radius: 0px 100px 100px 0;
+            height: 55px;
+            align-items: center;
+            padding-left: 47px;
+            margin-top: 43px;
+            font-size: 20px;
+            cursor: pointer;
+            .task:active{
+                    background-color: black;
+                    color: white;
+                }
+
+            }
+        }
+
+        }
+        .loaction {
+            color: black;
+            width: 250px;
+            display: flex;
+            column-gap: 20px;
+            border-radius: 0px 100px 100px 0;
+            height: 55px;
+            align-items: center;
+            padding-left: 47px;
+            margin-top: 42px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .logout {
+            display: flex;
+            margin-top: 65vh;
+            justify-content: left;
+            column-gap: 20px;
+            padding-left: 47px;
+            cursor: pointer;
+        }
+    
+    .page-content {
+        margin-left: 300px;
+        padding: 20px 50px;
+        flex-grow: 1;
+        margin-top: 30px;
+
+        .subContainer {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            .addTask {
+                height: 18px;
+                font-size: 18px;
+                color: #575767;
+                cursor: pointer;
+                font-weight: 700;
+                display: flex;
+            }
+            .incomlete {
+                height: 18px;
+                font-size: 18px;
+                color: #575767;
+                font-weight: 700;
+                display: flex;
+                width: 200px;
+            }
+            .incompleteTask {
+                display: flex;
+                flex-direction: column;
+                height: 45px;
+                column-gap: 20px;
+            }
+
+            .checkbox {
+                width: 24px;
+                height: 24px;
+                // border: 2px solid;
+                margin-right: 8px;
+                // border-radius: 60px;
+            }
+
+            h3 {
+                display: flex;
+                color: #575767;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-left: 30px;
+                margin-top: -40px;
+            }
+
+            h5 {
+                margin-top: -20px;
+                display: flex;
+                flex-direction: column;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 17px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-left: 28px;
+                margin-top: -7px;
+                color: #B9B9BE;     
+
+            }
+        }
+        .secoundSubCon {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            margin-top: 20px;
+            .complete {
+                color: #575767;
+                height: 18px;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 18px;
+                letter-spacing: 0em;
+            }
+            .completeTask {
+                display: flex;
+                column-gap: 10px;
+                flex-direction: column;
+
+
+                h3 {
+                    display: flex;
+                    color: #575767;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    margin-left: 28px;
+                    margin-top: -40px ;
+
+
+
+                }
+                h5 {
+                    margin-top: -20px;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Inter;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-left: 28px;
+                    margin-top: -7px;
+                    color: #B9B9BE;
+    
+                }
+            }
+        }
+    }
+    .modal-header{
+        border-bottom: none;
+        max-width: 100%;
+    .modal-title{
+        border-bottom: none;
+    }
+}
+    .modal-body{
+        .inpput{
+            border: none;
+            border-bottom: 1px solid grey;
+            outline: none;
+            padding: 10px 50px;
+            width: 100%;
+        }
+        .inpputDec{
+            border: none;
+            border-bottom: 1px solid grey;
+            outline: none;
+            padding: 10px 50px;
+            width: 100%;
+            // height: 150px;
+
+            
+        }
+        .summaryInput{
+            position: absolute;
+            left: 20px;
+            padding-top: 13px;
+        }
+
+    }
+

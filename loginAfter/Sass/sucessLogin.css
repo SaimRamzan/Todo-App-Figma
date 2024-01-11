@@ -15,6 +15,11 @@ body {
   position: fixed;
   display: block;
 }
+@media (max-width: 500px) {
+  .main .main-container {
+    width: 120px;
+  }
+}
 .main .main-container .task {
   width: 250px;
   display: flex;
@@ -29,9 +34,12 @@ body {
   font-size: 20px;
   cursor: pointer;
 }
-.main .main-container .task .task:active {
-  background-color: black;
-  color: white;
+@media (max-width: 500px) {
+  .main .main-container .task {
+    padding-left: 13px;
+    width: 100px;
+    font-size: 17px;
+  }
 }
 
 .loaction {
@@ -48,6 +56,13 @@ body {
   cursor: pointer;
   font-size: 25px;
 }
+@media (max-width: 500px) {
+  .loaction {
+    padding-left: 13px;
+    font-size: 17px;
+    width: 120px;
+  }
+}
 
 .logout {
   display: flex;
@@ -58,12 +73,27 @@ body {
   padding-left: 47px;
   cursor: pointer;
 }
+@media (max-width: 500px) {
+  .logout {
+    padding-left: 13px;
+    width: 110px;
+    font-size: 17px;
+    margin-top: 65vh;
+    overflow: hidden;
+  }
+}
 
 .page-content {
   margin-left: 300px;
   padding: 20px 50px;
   flex-grow: 1;
   margin-top: 30px;
+}
+@media (max-width: 500px) {
+  .page-content {
+    margin-left: 166px;
+    padding: 16px 3px;
+  }
 }
 .page-content .subContainer {
   display: flex;

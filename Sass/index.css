@@ -32,6 +32,11 @@ body {
   border: 1px;
   font-weight: bold;
 }
+@media (max-width: 500px) {
+  .loginPage #email {
+    width: 312px;
+  }
+}
 .loginPage #password {
   width: 295px;
   height: 40px;
@@ -46,6 +51,22 @@ body {
   font-size: 15px;
   line-height: 19.36px;
 }
+@media (max-width: 500px) {
+  .loginPage #password {
+    width: 264px;
+    height: 40px;
+    background: #F6F6F6;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    padding: 5px 15px;
+    padding-right: 64px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19.36px;
+  }
+}
 .loginPage .showPass {
   display: flex;
   align-items: center;
@@ -56,6 +77,15 @@ body {
   cursor: pointer;
   position: absolute;
   margin-left: 317px;
+}
+@media (max-width: 500px) {
+  .loginPage .showPass h4 {
+    margin-right: auto;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 291px;
+  }
 }
 .loginPage .loginButton {
   width: 373px;
@@ -68,4 +98,18 @@ body {
   padding: 16px, 32px, 16px, 32px;
   margin-top: 30px;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .loginPage .loginButton {
+    width: 300px;
+    height: 51px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    padding: 16px, 32px, 16px, 32px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -91,7 +91,7 @@ body {
 }
 @media (max-width: 500px) {
   .page-content {
-    margin-left: 166px;
+    margin-left: 150px;
     padding: 16px 3px;
   }
 }

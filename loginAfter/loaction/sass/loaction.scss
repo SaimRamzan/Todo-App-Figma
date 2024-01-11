@@ -82,7 +82,7 @@ body {
         flex-grow: 1;
         margin-top: 30px;
         @media (max-width:500px) {
-            margin-left: 166px;
+            margin-left: 150px;
             padding: 16px 3px;
         }
 
@@ -117,9 +117,7 @@ body {
             .checkbox {
                 width: 24px;
                 height: 24px;
-                // border: 2px solid;
                 margin-right: 8px;
-                // border-radius: 60px;
             }
 
             h3 {
@@ -181,8 +179,6 @@ body {
                     letter-spacing: 0em;
                     margin-left: 28px;
                     margin-top: -40px ;
-
-
 
                 }
                 h5 {

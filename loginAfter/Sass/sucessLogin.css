@@ -92,7 +92,7 @@ body {
 @media (max-width: 500px) {
   .page-content {
     margin-left: 166px;
-    padding: 16px 3px;
+    padding: 16px 4px;
   }
 }
 .page-content .subContainer {
@@ -141,6 +141,14 @@ body {
   margin-left: 50px;
   margin-top: -31px;
 }
+@media (max-width: 500px) {
+  .page-content .subContainer h3 {
+    width: 164px;
+    word-wrap: break-word;
+    text-wrap: wrap;
+    margin-left: 35px;
+  }
+}
 .page-content .subContainer h5 {
   margin-top: -20px;
   display: flex;
@@ -155,6 +163,11 @@ body {
   margin-left: 50px;
   margin-top: -7px;
   color: #B9B9BE;
+}
+@media (max-width: 500px) {
+  .page-content .subContainer h5 {
+    margin-left: 35px;
+  }
 }
 .page-content .secoundSubCon {
   display: flex;
@@ -189,6 +202,11 @@ body {
   letter-spacing: 0em;
   text-align: left;
   color: #b9b9be;
+}
+@media (max-width: 500px) {
+  .page-content .secoundSubCon .completeTask h3 {
+    word-wrap: break-word;
+  }
 }
 
 .modal-header {

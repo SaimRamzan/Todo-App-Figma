@@ -79,7 +79,7 @@ body {
         margin-top: 30px;
         @media (max-width:500px) {
             margin-left: 166px;
-            padding: 16px 3px;
+            padding: 16px 4px;
         }
 
         .subContainer {
@@ -107,6 +107,7 @@ body {
                 flex-direction: column;
                 height: 45px;
                 column-gap: 20px;
+                
             }
 
             .checkbox {
@@ -127,6 +128,12 @@ body {
                 text-align: left;
                 margin-left: 50px;
                 margin-top: -31px;
+                @media (max-width:500px) {
+                    width: 164px;
+                        word-wrap:break-word;
+                        text-wrap: wrap;
+                        margin-left: 35px;
+                }
             }
 
             h5 {
@@ -143,6 +150,9 @@ body {
                 margin-left: 50px;
                 margin-top: -7px;
                 color: #B9B9BE;
+                @media (max-width:500px) {
+                    margin-left: 35px;
+            }
 
             }
 
@@ -177,6 +187,10 @@ body {
                     letter-spacing: 0em;
                     text-align: left;
                     color: #b9b9be;
+                    @media (max-width:500px) {
+                        word-wrap: break-word;
+                        
+                }
                 }
             }
         }

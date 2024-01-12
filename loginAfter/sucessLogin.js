@@ -94,20 +94,20 @@ logout.addEventListener("click", ()=>{
     window.location.href = "../index.html"
 })
 
-setInterval(()=>{
- const inputValue = input.value 
- const decriptionValue = decription.value
- const dateValue = date.value
-    const getPcTime = new Date()
-    const getH = getPcTime.getHours()
-    const getM = getPcTime.getMinutes()
-    console.log(getH,getM);
-    if (dateValue == ) {
+// setInterval(()=>{
+//  const inputValue = input.value 
+//  const decriptionValue = decription.value
+//  const dateValue = date.value
+//     const getPcTime = new Date()
+//     const getH = getPcTime.getHours()
+//     const getM = getPcTime.getMinutes()
+//     console.log(getH,getM);
+//     if (dateValue == ) {
         
-    }
+//     }
 
 
-} , 1000)
+// } , 1000)
 
 // skipButton.addEventListener('click', ()=>{
     // const createElementForReminder = document.createElement('div')

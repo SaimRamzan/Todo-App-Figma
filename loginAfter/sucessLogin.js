@@ -9,24 +9,8 @@ const inputdate = document.getElementById('inputdate')
 const task = document.getElementById('incomleteTask')
 const logout = document.getElementById('logout')
 const loaction = document.querySelector('.loaction')
+const skipButton = document.getElementById('skipp')
 
-
-
-
-// const checkNotification = () => {
-//     let currentDate = new Date().toLocaleString();
-    
-//     if (date.value === currentDate) {
-//         Notification.requestPermission().then((permission) => {
-//             if (permission === 'granted') {
-//                 new Notification('Notification Title', {
-//                     body: 'Notification Body',
-//                     data: { this: 'world' }
-//                 });
-//             }
-//         });
-//     }
-// };
 
 
 
@@ -54,7 +38,6 @@ const formValidation = ()=>{
         add.setAttribute("data-dismiss","modal")
         add.click()
         closeModel()
-        // checkNotification() //notifaction function
     }
 }
 let closeModel = ()=>{
@@ -80,14 +63,15 @@ const incompleteTask = () => {
     const updatedTask = document.createElement('div');
        updatedTask.innerHTML = `
        <div id=${b} class="incomleteTask" id="incomleteTask">
-                        <input class="checkbox" type="checkbox" name="checkbox" id="">
+                        <input onclick="checkbox" class="checkbox" type="checkbox" name="checkbox" id="">
                         <h3>${a.text}</h3>
                         <h5>⏰ ${a.date}</h5>
-                    </div>
+        </div>
         `;
         updatedTask.style.marginBottom = "20px";
         task.appendChild(updatedTask);
         formReset()
+        
     })
 
 }
@@ -110,6 +94,33 @@ logout.addEventListener("click", ()=>{
     window.location.href = "../index.html"
 })
 
+setInterval(()=>{
+ const inputValue = input.value 
+ const decriptionValue = decription.value
+ const dateValue = date.value
+    const getPcTime = new Date()
+    const getH = getPcTime.getHours()
+    const getM = getPcTime.getMinutes()
+    console.log(getH,getM);
+    if (dateValue == ) {
+        
+    }
 
 
+} , 1000)
 
+// skipButton.addEventListener('click', ()=>{
+    // const createElementForReminder = document.createElement('div')
+    // createElementForReminder.innerHTML = `
+    // <div class="pWrapper">
+    //   <p class="reminder">Submit my resume</p>
+    //   <p id="remindAbout">Send my resume to DigitalTolk</p>
+    // </div>
+    //   <img src="Image Source/Frame.png" alt="">
+    //   <div class="skip" id="skip">
+    //     <p id="skip">Skip</p>
+    //     <p id="remindLater">Remind me later</p>
+    //   </div> 
+    // `
+// console.log('hello');
+// })

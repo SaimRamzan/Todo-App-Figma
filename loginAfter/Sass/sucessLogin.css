@@ -191,9 +191,12 @@ body {
 .page-content .secoundSubCon .completeTask #checkboxComplete {
   width: 24px;
   height: 24px;
-  border-radius: 6px;
+  border-radius: 50%;
   border: 2px solid;
   margin-right: 8px;
+}
+.page-content .secoundSubCon .completeTask #checkboxComplete:checked {
+  accent-color: #575767;
 }
 .page-content .secoundSubCon .completeTask h3 {
   font-size: 18px;
@@ -237,45 +240,49 @@ body {
   padding-top: 13px;
 }
 
-.remind {
+#main-header {
+  font-family: sans-serif;
   position: absolute;
+  width: 360px;
+  box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.05);
   right: 30px;
   top: 50px;
-  width: 360px;
   border-radius: 10px;
-  box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.05);
 }
-.remind .pWrapper {
+#main-header .remind .pWrapper {
   padding: 10px;
 }
-.remind .pWrapper .reminder {
+#main-header .remind .pWrapper .reminder {
   font-weight: bold;
   font-family: sans-serif;
   font-weight: 700;
   size: 18px;
   line-height: 21px;
 }
-.remind img {
+#main-header .remind img {
   position: absolute;
   right: 20px;
   top: 10px;
   align-items: center;
 }
-.remind .skip {
+#main-header .remind .skip {
   display: flex;
   background-color: #F6F5F5;
   width: 360px;
   border-radius: 0px, 0px, 10px, 10px;
   justify-content: center;
+  font-family: sans-serif;
 }
-.remind .skip #skip {
+#main-header .remind .skip #skip {
   text-align: right;
   margin-left: 45%;
   padding: 5px 30px 0 0;
   cursor: pointer;
+  font-family: sans-serif;
 }
-.remind .skip #remindLater {
+#main-header .remind .skip #remindLater {
   padding: 5px 5px 0 0;
   cursor: pointer;
   font-weight: bold;
+  font-family: sans-serif;
 }/*# sourceMappingURL=sucessLogin.css.map */

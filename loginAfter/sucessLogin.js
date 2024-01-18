@@ -9,10 +9,7 @@ const inputdate = document.getElementById('inputdate')
 const task = document.getElementById('incomleteTask')
 const logout = document.getElementById('logout')
 const loaction = document.querySelector('.loaction')
-const skipButton = document.getElementById('skipp')
-
-
-
+const skipButton = document.getElementById('skip')
 
 
 form.addEventListener('submit',(e)=>{
@@ -53,7 +50,7 @@ let addData = ()=>{
         date: date.value,
     })
     localStorage.setItem("data", JSON.stringify(data))
-    console.log(data);
+    console.log('data',data);
     incompleteTask()
 }
 
@@ -68,19 +65,68 @@ const incompleteTask = () => {
                         <h5>⏰ ${a.date}</h5>
         </div>
         `;
+
         updatedTask.style.marginBottom = "20px";
+       let getdatee = localStorage.getItem(date)
+        // setInterval(() => {
+        // const localTime = new Date()
+        // const dateValue = date.value()
+        // console.log('dateValue',dateValue);
+        // const getH = localTime.getHours()
+        // const getM = localTime.getMinutes()
+        // const hoursPlusMin = `${getH}:${getM}`
+        // if (a.data == hoursPlusMin) {
+        //     console.log('hellow');
+        // }
+        // }, 1000);
+        
+
         task.appendChild(updatedTask);
         formReset()
         
     })
-
 }
+
+
+// skipButton.addEventListener('click', ()=>{
+//     const createElementForReminder = document.createElement('div')
+    
+//     createElementForReminder.innerHTML=`
+//     <div id="remind" class="remind">
+//       <div class="pWrapper">
+//       <p class="reminder">Submit my resume</p>
+//       <p id="remindAbout">Send my resume to DigitalTolk</p>
+//     </div>
+//       <img src="Image Source/Frame.png" alt="">
+//       <div class="skip" id="skip">
+//         <p id="skip">Skip</p>
+//         <p id="remindLater">Remind me later</p>
+        
+//       </div>
+//     </div>
+//     `
+//     document.body.appendChild(createElementForReminder);
+//     setTimeout(() => {
+//         createElementForReminder.remove();
+// })
 
 const formReset = ()=>{
     input.value = ''
     decription.value = ''
     date.value= ''
 }
+const checkbox = () => {
+    const incompleteCheckBox = document.getElementById('checkbox').checked;
+    if (incompleteCheckBox === true) {
+        console.log('hello world');
+    } else {
+        console.log('hye');
+    }
+}
+
+
+
+
 (()=>{
     data = JSON.parse(localStorage.getItem("data")) || []
     incompleteTask()
@@ -93,34 +139,21 @@ loaction.addEventListener('click',()=>{
 logout.addEventListener("click", ()=>{
     window.location.href = "../index.html"
 })
+                 
+            // const notifactionChrcker = () => setInterval(()=>{
+            //     const dateValue = date.value
+            //     console.log(dateValue);
+            //     const getPcTime = new Date()
+            //     const getH = getPcTime.getHours()
+            //     const getM = getPcTime.getMinutes()
+            //     console.log(getH,getM);
 
-// setInterval(()=>{
-//  const inputValue = input.value 
-//  const decriptionValue = decription.value
-//  const dateValue = date.value
-//     const getPcTime = new Date()
-//     const getH = getPcTime.getHours()
-//     const getM = getPcTime.getMinutes()
-//     console.log(getH,getM);
-//     if (dateValue == ) {
-        
-//     }
+            // const inputDate = new Date(dateValue);
 
-
-// } , 1000)
-
-// skipButton.addEventListener('click', ()=>{
-    // const createElementForReminder = document.createElement('div')
-    // createElementForReminder.innerHTML = `
-    // <div class="pWrapper">
-    //   <p class="reminder">Submit my resume</p>
-    //   <p id="remindAbout">Send my resume to DigitalTolk</p>
-    // </div>
-    //   <img src="Image Source/Frame.png" alt="">
-    //   <div class="skip" id="skip">
-    //     <p id="skip">Skip</p>
-    //     <p id="remindLater">Remind me later</p>
-    //   </div> 
-    // `
-// console.log('hello');
-// })
+            // if (inputDate.getHours() == getH && inputDate.getMinutes() == getM) {
+            //     console.log('helo')
+            // } else {
+            //     console.log(`can't same time`)    
+            // }
+            
+            // } , 5000)

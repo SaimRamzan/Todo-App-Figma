@@ -9,7 +9,7 @@ const inputdate = document.getElementById('inputdate')
 const task = document.getElementById('incomleteTask')
 const logout = document.getElementById('logout')
 const loaction = document.querySelector('.loaction')
-const skipButton = document.getElementById('skip')
+const skipButton = document.querySelector('.skipp')
 
 
 form.addEventListener('submit',(e)=>{
@@ -53,7 +53,6 @@ let addData = ()=>{
     console.log('data',data);
     incompleteTask()
 }
-
 const incompleteTask = () => {
      task.innerHTML = "";
     data.map((a,b)=>{
@@ -65,50 +64,15 @@ const incompleteTask = () => {
                         <h5>⏰ ${a.date}</h5>
         </div>
         `;
-
+        reminder();
         updatedTask.style.marginBottom = "20px";
-       let getdatee = localStorage.getItem(date)
-        // setInterval(() => {
-        // const localTime = new Date()
-        // const dateValue = date.value()
-        // console.log('dateValue',dateValue);
-        // const getH = localTime.getHours()
-        // const getM = localTime.getMinutes()
-        // const hoursPlusMin = `${getH}:${getM}`
-        // if (a.data == hoursPlusMin) {
-        //     console.log('hellow');
-        // }
-        // }, 1000);
-        
-
         task.appendChild(updatedTask);
-        formReset()
+        formReset();
         
     })
 }
 
 
-// skipButton.addEventListener('click', ()=>{
-//     const createElementForReminder = document.createElement('div')
-    
-//     createElementForReminder.innerHTML=`
-//     <div id="remind" class="remind">
-//       <div class="pWrapper">
-//       <p class="reminder">Submit my resume</p>
-//       <p id="remindAbout">Send my resume to DigitalTolk</p>
-//     </div>
-//       <img src="Image Source/Frame.png" alt="">
-//       <div class="skip" id="skip">
-//         <p id="skip">Skip</p>
-//         <p id="remindLater">Remind me later</p>
-        
-//       </div>
-//     </div>
-//     `
-//     document.body.appendChild(createElementForReminder);
-//     setTimeout(() => {
-//         createElementForReminder.remove();
-// })
 
 const formReset = ()=>{
     input.value = ''
@@ -124,13 +88,40 @@ const checkbox = () => {
     }
 }
 
+const reminder =  ()=>{
+    setInterval(() => {
+        const getDate = data.filter(item => item.date)
+    const localDate = new Date
+    const gethours = localDate.getHours()
+    const getMinutes = localDate.getMinutes()
+    const concatMinHours = `${gethours}:${getMinutes}`;
+    getDate.filter(item => {
+        if (item.date === concatMinHours) {
+            const remminder = document.getElementById('main-header');
+            const headText = document.querySelector('.reminder');
+            const decription = document.getElementById('remindAbout');
+            headText.innerText = item.text;
+            decription.innerText = item.decription;
+            remminder.style.display = 'block'
+            
+        }else{
+            const remminder = document.getElementById('main-header');
+            remminder.style.display = 'none'
+        }
+
+    })
+    }, 10000);
+    
+};
 
 
+skipButton.addEventListener('click', () => {
+    const remminder = document.getElementById('main-header')
+    remminder.style.display = 'none'});
 
 (()=>{
     data = JSON.parse(localStorage.getItem("data")) || []
     incompleteTask()
-    console.log(data);
 })()
 
 loaction.addEventListener('click',()=>{
@@ -139,21 +130,3 @@ loaction.addEventListener('click',()=>{
 logout.addEventListener("click", ()=>{
     window.location.href = "../index.html"
 })
-                 
-            // const notifactionChrcker = () => setInterval(()=>{
-            //     const dateValue = date.value
-            //     console.log(dateValue);
-            //     const getPcTime = new Date()
-            //     const getH = getPcTime.getHours()
-            //     const getM = getPcTime.getMinutes()
-            //     console.log(getH,getM);
-
-            // const inputDate = new Date(dateValue);
-
-            // if (inputDate.getHours() == getH && inputDate.getMinutes() == getM) {
-            //     console.log('helo')
-            // } else {
-            //     console.log(`can't same time`)    
-            // }
-            
-            // } , 5000)

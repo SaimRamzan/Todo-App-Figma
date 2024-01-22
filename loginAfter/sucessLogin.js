@@ -10,7 +10,6 @@ const task = document.getElementById('incomleteTask')
 const logout = document.getElementById('logout')
 const loaction = document.querySelector('.loaction')
 const skipButton = document.querySelector('.skipp')
-const completeTask = document.getElementById('completeTask')
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
@@ -68,63 +67,22 @@ const incompleteTask = () => {
         updatedTask.style.marginBottom = "20px";
         task.appendChild(updatedTask);
         formReset();
+        incompleteTaskDelete(a,b)
+
         
     })
 }
 
-// console.log('data',data);
-
-// const completedData = []
-// const incompleteTaskDelete = ()=>{
-//     // setInterval(()=>{
-//         const localDate = new Date
-//         const gethours = localDate.getHours()
-//         const getMinutes = localDate.getMinutes()
-//         const concatMinHours = `${gethours}:${getMinutes}`;
-//         const filterData = data.filter(item => item.date === concatMinHours);
-//         console.log('filterData',filterData);
-//         completedData.push(filterData)
-//         completeTask.innerHTML ='';
-//     let completeDiv = document.createElement('div')
-//     completeDiv.innerHTML=`
-//          <div class="completeTask"  id="completeTask">
-//             <input type="checkbox" checked name="checkbox" id="checkboxComplete">
-//             <h3>${data.text}</h3>
-//             </div>`
-//             completeTask.appendChild(completeDiv)
-// }
-// console.log('completedData',completedData);
 
 
-// const completedData = [];
-// const incompleteTaskDelete = () => {
-//     const localDate = new Date();
-//     const gethours = localDate.getHours();
-//     const getMinutes = localDate.getMinutes();
-//     const concatMinHours = `${gethours}:${getMinutes}`;
-    
-//     // Assuming data is an array of objects with a 'date' property
-//     const filterData = data.filter(item => item.date === concatMinHours);
+// array => incomplete
+// => filter it according to reminderd tasks
+// delete the same task
+// let deleteItem = fpokdop
 
-//     console.log('filterData', filterData);
-
-//     // Assuming completeTask is a DOM element
-//     completeTask.innerHTML = '';
-
-//     filterData.forEach(item => {
-//         let completeDiv = document.createElement('div');
-//         completeDiv.innerHTML = `
-//             <div class="completeTask" id="completeTask">
-//                 <input type="checkbox" checked name="checkbox" id="checkboxComplete">
-//                 <h3>${item.text}</h3>
-//             </div>`;
-//         completeTask.appendChild(completeDiv);
-//     });
-
-//     completedData.push(filterData);
-// };
-// incompleteTaskDelete()
-// console.log('completedData', completedData);
+// newarray => completed []
+// newarray.push()
+    // push deleted item => deleteItem
 
 
 
@@ -144,18 +102,6 @@ const checkbox = () => {
 let clear ;
 let reminderEnable = true ;
 
-
-// array => incomplete
-// => filter it according to reminderd tasks
-// delete the same task
-// let deleteItem = fpokdop
-
-// newarray => completed []
-// newarray.push()
-    // push deleted item => deleteItem
-
-
-
 const reminder =  ()=>{
     clear = setInterval(() => {
         if (reminderEnable) {
@@ -164,7 +110,7 @@ const reminder =  ()=>{
             const gethours = localDate.getHours()
             const getMinutes = localDate.getMinutes()
             const concatMinHours = `${gethours}:${getMinutes}`;
-            getDate.filter(item => {
+            getDate.map(item => {
                 const remminder = document.getElementById('main-header');
                         const headText = document.querySelector('.reminder');
                         const decription = document.getElementById('remindAbout');
@@ -192,8 +138,42 @@ skipButton.addEventListener('click', () => {
 
     setTimeout(()=>{
         reminderEnable = true
-    },50000)
+    },30000)
 });
+
+const completedData = []
+const incompleteTaskDelete = (taskData, index)=>{
+    let checkAndComplete = ()=>{
+        const completeTask = document.getElementById('completeTaskk')
+        const localDate = new Date
+        const gethours = localDate.getHours()
+        const getMinutes = localDate.getMinutes()
+        const concatMinHours = `${gethours}:${getMinutes}`;
+        // const filterData = data.filter(item => item.date === concatMinHours);
+        const filterData = data.filter(item => item.date === concatMinHours && item.text === taskData.text);
+
+        console.log('filterData',filterData);
+        filterData.map(item =>{
+            let completeDiv = document.createElement('div')
+           completeDiv.innerHTML=`
+             <div class="completeTask"  id="completeTask">
+                <input type="checkbox" checked name="checkbox" id="checkboxComplete">
+                <h3>${item.text}</h3>
+                </div>`;
+                completeTask.appendChild(completeDiv)
+                const incompleteTaskElement = document.getElementById(index);
+                if (incompleteTaskElement && incompleteTaskElement.parentElement === task) {
+                    task.removeChild(incompleteTaskElement);
+                }
+        })
+        completedData.push(filterData)
+    }
+    setTimeout(checkAndComplete,10000)
+    checkAndComplete()
+}
+console.log('completedData',completedData);
+
+
 
 (()=>{
     data = JSON.parse(localStorage.getItem("data")) || []

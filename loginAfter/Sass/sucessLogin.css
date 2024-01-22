@@ -185,8 +185,8 @@ body {
 }
 .page-content .secoundSubCon .completeTask {
   display: flex;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  row-gap: 5px;
+  flex-direction: column;
 }
 .page-content .secoundSubCon .completeTask #checkboxComplete {
   width: 24px;
@@ -205,6 +205,9 @@ body {
   letter-spacing: 0em;
   text-align: left;
   color: #b9b9be;
+  margin-left: 50px;
+  margin-top: -28px;
+  margin-bottom: 20px;
 }
 @media (max-width: 500px) {
   .page-content .secoundSubCon .completeTask h3 {
@@ -260,6 +263,14 @@ body {
   font-weight: 700;
   size: 18px;
   line-height: 21px;
+  word-wrap: break-word;
+  width: 259px;
+  word-wrap: break-word;
+  width: 259px;
+}
+#main-header .remind .pWrapper p {
+  word-wrap: break-word;
+  width: 259px;
 }
 #main-header .remind img {
   position: absolute;

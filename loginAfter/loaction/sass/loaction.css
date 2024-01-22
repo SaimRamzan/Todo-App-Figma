@@ -21,18 +21,21 @@ body {
   }
 }
 .main .main-container .task {
+  color: black;
   width: 250px;
   display: flex;
-  color: black;
   -moz-column-gap: 20px;
        column-gap: 20px;
   border-radius: 0px 100px 100px 0;
   height: 55px;
   align-items: center;
   padding-left: 47px;
-  margin-top: 43px;
-  font-size: 20px;
+  margin-top: 42px;
   cursor: pointer;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 21.78px;
 }
 @media (max-width: 500px) {
   .main .main-container .task {
@@ -54,7 +57,10 @@ body {
   padding-left: 47px;
   margin-top: 42px;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 21.78px;
 }
 @media (max-width: 500px) {
   .loaction {
@@ -66,11 +72,14 @@ body {
 
 .logout {
   display: flex;
-  margin-top: 65vh;
+  margin-top: 63vh;
   justify-content: left;
   -moz-column-gap: 20px;
        column-gap: 20px;
   padding-left: 47px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   cursor: pointer;
 }
 @media (max-width: 500px) {
@@ -84,10 +93,12 @@ body {
 }
 
 .page-content {
+  display: flex;
   margin-left: 300px;
   padding: 20px 50px;
-  flex-grow: 1;
   margin-top: 30px;
+  flex-direction: column;
+  gap: 30px;
 }
 @media (max-width: 500px) {
   .page-content {
@@ -105,6 +116,7 @@ body {
   font-size: 18px;
   color: #575767;
   cursor: pointer;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   display: flex;
 }
@@ -112,9 +124,10 @@ body {
   height: 18px;
   font-size: 18px;
   color: #575767;
-  font-weight: 700;
   display: flex;
   width: 200px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
 }
 .page-content .subContainer .incompleteTask {
   display: flex;
@@ -132,12 +145,13 @@ body {
   display: flex;
   color: #575767;
   font-size: 18px;
-  font-weight: 500;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
   margin-left: 30px;
   margin-top: -40px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 @media (max-width: 500px) {
   .page-content .subContainer h3 {
@@ -148,14 +162,15 @@ body {
   margin-top: -20px;
   display: flex;
   flex-direction: column;
-  font-family: Inter;
+  font-family: sa;
   font-size: 14px;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
-  margin-left: 28px;
-  margin-top: -7px;
+  margin-left: 30px;
+  margin-top: -4px;
   color: #B9B9BE;
 }
 .page-content .secoundSubCon {

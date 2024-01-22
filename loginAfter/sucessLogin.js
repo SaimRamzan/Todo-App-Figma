@@ -10,6 +10,9 @@ const task = document.getElementById('incomleteTask')
 const logout = document.getElementById('logout')
 const loaction = document.querySelector('.loaction')
 const skipButton = document.querySelector('.skipp')
+const teskActive = document.querySelector('.task')
+
+
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
@@ -67,22 +70,11 @@ const incompleteTask = () => {
         updatedTask.style.marginBottom = "20px";
         task.appendChild(updatedTask);
         formReset();
-        incompleteTaskDelete(a,b)
+        incompleteTaskDelete()
 
         
     })
 }
-
-
-
-// array => incomplete
-// => filter it according to reminderd tasks
-// delete the same task
-// let deleteItem = fpokdop
-
-// newarray => completed []
-// newarray.push()
-    // push deleted item => deleteItem
 
 
 
@@ -102,7 +94,7 @@ const checkbox = () => {
 let clear ;
 let reminderEnable = true ;
 
-const reminder =  ()=>{
+const reminder =  ()=>{ 
     clear = setInterval(() => {
         if (reminderEnable) {
             const getDate = data.filter(item => item.date)
@@ -123,7 +115,7 @@ const reminder =  ()=>{
                     }
         
             })
-        }
+        }   
     }, 10000);
     
 };
@@ -161,10 +153,6 @@ const incompleteTaskDelete = (taskData, index)=>{
                 <h3>${item.text}</h3>
                 </div>`;
                 completeTask.appendChild(completeDiv)
-                const incompleteTaskElement = document.getElementById(index);
-                if (incompleteTaskElement && incompleteTaskElement.parentElement === task) {
-                    task.removeChild(incompleteTaskElement);
-                }
         })
         completedData.push(filterData)
     }
@@ -174,6 +162,18 @@ const incompleteTaskDelete = (taskData, index)=>{
 console.log('completedData',completedData);
 
 
+
+
+let active = ()=>{
+    if (teskActive == true ) {
+        teskActive.style.backgroundColor = "white"
+    }else{
+        teskActive.style.backgroundColor = "black"
+        teskActive.style.color = "white"
+    
+    }
+}
+active();
 
 (()=>{
     data = JSON.parse(localStorage.getItem("data")) || []

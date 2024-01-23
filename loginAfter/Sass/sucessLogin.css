@@ -135,9 +135,8 @@ body {
 .page-content .subContainer .checkbox {
   width: 24px;
   height: 24px;
-  border: 2px solid;
   margin-right: 8px;
-  border-radius: 60px;
+  border-radius: 10px;
 }
 .page-content .subContainer h3 {
   display: flex;
@@ -200,12 +199,11 @@ body {
 .page-content .secoundSubCon .completeTask #checkboxComplete {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
   border: 2px solid;
   margin-right: 8px;
 }
 .page-content .secoundSubCon .completeTask #checkboxComplete:checked {
-  accent-color: #575767;
+  accent-color: #DADADA;
 }
 .page-content .secoundSubCon .completeTask h3 {
   font-size: 18px;

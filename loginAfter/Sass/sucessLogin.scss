@@ -122,9 +122,9 @@ body {
             .checkbox {
                 width: 24px;
                 height: 24px;
-                border: 2px solid;
                 margin-right: 8px;
-                border-radius: 60px;
+                border-radius: 10px;
+                
             }
 
             h3 {
@@ -186,15 +186,15 @@ body {
                 #checkboxComplete {
                     width: 24px;
                     height: 24px;
-                    border-radius: 50%;
                     border: 2px solid;
                     margin-right: 8px;
 
 
                 }
                 #checkboxComplete:checked{
-                    accent-color: #575767;
+                    accent-color: #DADADA;
                 } 
+
                 h3 {
                     font-size: 18px;
                     font-weight: 500;

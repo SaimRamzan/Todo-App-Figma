@@ -11,6 +11,7 @@ const logout = document.getElementById("logout");
 const loaction = document.querySelector(".loaction");
 const skipButton = document.querySelector(".skipp");
 const teskActive = document.querySelector(".task");
+const notask = document.getElementById("notask");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -149,6 +150,7 @@ const incompleteTaskDelete = (taskData, index) => {
     console.log("filterData", filterData);
     if (filterData.length > 0) {
       filterData.map((item) => {
+        notask.innerHTML = "";
         let completeDiv = document.createElement("div");
         completeDiv.innerHTML = `
                          <div class="completeTask"  id="completeTask">

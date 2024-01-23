@@ -205,6 +205,10 @@ body {
 .page-content .secoundSubCon .completeTask #checkboxComplete:checked {
   accent-color: #DADADA;
 }
+.page-content .secoundSubCon .completeTask #notask {
+  padding-top: 20px;
+  color: black;
+}
 .page-content .secoundSubCon .completeTask h3 {
   font-size: 18px;
   font-weight: 500;

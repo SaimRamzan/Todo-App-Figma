@@ -160,7 +160,7 @@ const incompleteTaskDelete = (taskData, index) => {
         // incompleteTask.removeChild()
         completedData.push(...filterData);
       });
-      const taskDataRemove = data.findIndex((item) => item <= taskData);
+      const taskDataRemove = data.findIndex((item) => item === taskData);
       if (taskDataRemove !== -1) {
         data.splice(taskDataRemove, 1);
       }
@@ -181,12 +181,13 @@ let active = () => {
 active();
 
 (() => {
-  data = JSON.parse(localStorage.getItem("data")) || [];
-  incompleteTask();
-})();
-(() => {
   data = JSON.parse(localStorage.getItem("completedData")) || [];
   incompleteTaskDelete();
+})();
+
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || [];
+  incompleteTask();
 })();
 
 loaction.addEventListener("click", () => {

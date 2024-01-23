@@ -38,8 +38,8 @@ body {
 }
 @media (max-width: 500px) {
   .main .main-container .task {
-    padding-left: 13px;
-    width: 100px;
+    padding-left: 7px;
+    width: 138px;
     font-size: 17px;
   }
 }
@@ -63,7 +63,7 @@ body {
 }
 @media (max-width: 500px) {
   .loaction {
-    padding-left: 13px;
+    padding-left: 7px;
     font-size: 17px;
     width: 120px;
   }

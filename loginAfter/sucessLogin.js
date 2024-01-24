@@ -58,13 +58,17 @@ const incompleteTask = () => {
   task.innerHTML = "";
   data.map((a, b) => {
     const updatedTask = document.createElement("div");
-    updatedTask.innerHTML = `
-       <div id=${b} class="incomleteTask" id="incomleteTask">
-                        <input onclick="checkbox" class="checkbox" type="checkbox" name="checkbox" id="">
-                        <h3>${a.text}</h3>
-                        <h5>⏰ ${a.date}</h5>
-        </div>
-        `;
+    updatedTask.innerHTML =
+      `<div id=${b} class="task" id="incomleteTask">
+          <label class="custom-checkbox-wrapper" for="custom-checkbox">
+            <input onclick="checkbox" class="checkbox" type="checkbox" name="checkbox" id="custom-checkbox">
+            <span class="checkbox"></span>
+          </label>
+          <div class="content">
+            <h3>${a.text}</h3>
+            <h5>⏰ ${a.date}</h5>
+          </div>
+        </div>`;
     reminder();
     incompleteTaskDelete(a, b);
     updatedTask.style.marginBottom = "20px";
@@ -153,10 +157,13 @@ const incompleteTaskDelete = (taskData, index) => {
         notask.innerHTML = "";
         let completeDiv = document.createElement("div");
         completeDiv.innerHTML = `
-                         <div class="completeTask"  id="completeTask">
-                            <input type="checkbox" checked name="checkbox" id="checkboxComplete">
-                            <h3>${item.text}</h3>
-                            </div>`;
+              <div class="completeTask"  id="completeTask">
+                <label class="custom-checkbox-wrapper" for="custom-checkbox">
+                  <input onclick="checkbox" type="checkbox" checked name="checkbox" id="checkboxComplete">
+                  <span class="checkbox"></span>
+                </label>
+                <h3>${item.text}</h3>
+              </div>`;
         completeTask.appendChild(completeDiv);
 
         // incompleteTask.removeChild()

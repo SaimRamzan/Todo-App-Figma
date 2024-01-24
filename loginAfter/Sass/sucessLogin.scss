@@ -111,58 +111,31 @@ body {
                 display: flex;
                 width: 99px;
             }
-            .incompleteTask {
+            .task {
                 display: flex;
-                flex-direction: column;
-                height: 45px;
-                column-gap: 20px;
-                
-            }
-
-            .checkbox {
-                width: 24px;
-                height: 24px;
-                margin-right: 8px;
-                border-radius: 10px;
-                
-            }
-
-            h3 {
-                display: flex;
-                color: #575767;
-                font-size: 18px;
-                font-weight: 500;
-                line-height: 24px;
-                letter-spacing: 0em;
-                text-align: left;
-                margin-left: 50px;
-                margin-top: -31px;
-                @media (max-width:500px) {
-                    width: 164px;
-                        word-wrap:break-word;
-                        text-wrap: wrap;
-                        margin-left: 35px;
+                gap: 16px;
+                .content{
+                    h3 {
+                        color: #575767;
+                        font-size: 18px;
+                        font-weight: bold;
+                        line-height: 24px;
+                        text-align: left;
+                        @media (max-width:500px) {
+                            word-wrap:break-word;
+                            text-wrap: wrap;
+                        }
+                    }
+        
+                    h5 {
+                        font-family: 'Inter', sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 17px;
+                        color: #B9B9BE;
                 }
-            }
-
-            h5 {
-                margin-top: -20px;
-                display: flex;
-                flex-direction: column;
-                font-family: Inter;
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 17px;
-                letter-spacing: 0em;
-                text-align: left;
-                margin-left: 30px;
-                margin-left: 50px;
-                margin-top: -8px;
-                color: #B9B9BE;
-                @media (max-width:500px) {
-                    margin-left: 35px;
-            }
-
+    
+                }
             }
 
         }
@@ -309,4 +282,28 @@ body {
             }
         }
     }
+    }
+
+    .custom-checkbox-wrapper{
+        width: 24px;
+        height: 24px;
+        margin-bottom: 0;
+        position: relative;
+        cursor: pointer;
+        input{
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .checkbox{
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-image: url('../images/unchecked.svg');
+            background-size: 24px;
+        }
+        input:checked ~ .checkbox{
+            background-image: url('../images/checked.svg');
+        }
     }

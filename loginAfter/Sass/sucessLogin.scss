@@ -63,7 +63,7 @@ body {
         }   
         .logout {
             display: flex;
-            margin-top: 63vh;
+            margin-top: 67vh;
             justify-content: left;
             column-gap: 20px;
             padding-left: 47px;
@@ -118,8 +118,10 @@ body {
                     h3 {
                         color: #575767;
                         font-size: 18px;
-                        font-weight: bold;
+                        font-family: 'Inter', sans-serif;
+                        font-weight: 500;
                         line-height: 24px;
+                        font-style: normal;
                         text-align: left;
                         @media (max-width:500px) {
                             word-wrap:break-word;
@@ -177,7 +179,7 @@ body {
                     line-height: 24px;
                     letter-spacing: 0em;
                     text-align: left;
-                    color: #b9b9be;
+                    color: #B9B9BE;
                     margin-left: 50px;
                     margin-top: -28px;
                     margin-bottom: 20px;

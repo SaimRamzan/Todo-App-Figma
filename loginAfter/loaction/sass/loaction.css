@@ -72,7 +72,7 @@ body {
 
 .logout {
   display: flex;
-  margin-top: 63vh;
+  margin-top: 67vh;
   justify-content: left;
   -moz-column-gap: 20px;
        column-gap: 20px;
@@ -244,4 +244,4 @@ body {
   position: absolute;
   left: 20px;
   padding-top: 13px;
-}
+}/*# sourceMappingURL=loaction.css.map */

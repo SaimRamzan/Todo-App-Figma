@@ -12,7 +12,6 @@ const loaction = document.querySelector(".loaction");
 const skipButton = document.querySelector(".skipp");
 const teskActive = document.querySelector(".task");
 const notask = document.getElementById("notask");
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -42,6 +41,7 @@ let closeModel = () => {
   add.setAttribute("data-dismiss", "");
 };
 
+
 let data = [];
 
 let addData = () => {
@@ -53,15 +53,18 @@ let addData = () => {
   localStorage.setItem("data", JSON.stringify(data));
   console.log("data", data);
   incompleteTask();
+  formReset();
 };
+
+
 const incompleteTask = () => {
   task.innerHTML = "";
   data.map((a, b) => {
     const updatedTask = document.createElement("div");
-    updatedTask.innerHTML =
-      `<div id=${b} class="task" id="incomleteTask">
-          <label class="custom-checkbox-wrapper" for="custom-checkbox">
-            <input onclick="checkbox" class="checkbox" type="checkbox" name="checkbox" id="custom-checkbox">
+    updatedTask.innerHTML = `<div id=${b} class="task" id="incomleteTask">
+          <label class="custom-checkbox-wrapper"  id="checkboxInComplete" for="custom-checkbox">
+            <input  class="checkbox" type="checkbox" onclick = " 
+              complete('${a.text}','${b}')"  name="checkbox" id="custom-checkbox">
             <span class="checkbox"></span>
           </label>
           <div class="content">
@@ -77,19 +80,55 @@ const incompleteTask = () => {
   });
 };
 
+
+
+const completeTest = document.getElementById("completetest");
+const data1 = JSON.parse(localStorage.getItem("completedData"))
+console.log("data1", data1);
+let showCompleteData = () => {
+  data1?.map(item => {
+    let completeDiv = document.createElement("div");
+    notask.innerHTML = "";
+    completeDiv.innerHTML = `
+          <div class="completeTask"  id="completeTask">
+            <label class="custom-checkbox-wrapper" id="checkboxCompletee" for="custom-checkbox">
+              <input type="checkbox" checked name="checkbox" id="checkboxComplete">
+              <span class="checkbox"></span>
+            </label>
+            <h3>${item.text}</h3>
+          </div>`
+    completeTest.appendChild(completeDiv);
+  })
+
+}
+const join = JSON.parse(localStorage.getItem('completedData'))
+
+function complete(b) {
+  const complete = data?.splice(b, 1);
+  const joindata = complete.concat(join)
+  localStorage.setItem("data", JSON.stringify(data));
+  if (join === null) {
+    localStorage.setItem("completedData", JSON.stringify(complete));
+  } else {
+    localStorage.setItem("completedData", JSON.stringify(joindata));
+
+  }
+  incompleteTask()
+  // showCompleteData()
+}
+
+
+showCompleteData()
+
+
+
+
 const formReset = () => {
   input.value = "";
   decription.value = "";
   date.value = "";
 };
-const checkbox = () => {
-  const incompleteCheckBox = document.getElementById("checkbox").checked;
-  if (incompleteCheckBox === true) {
-    console.log("hello world");
-  } else {
-    console.log("hye");
-  }
-};
+
 let clear;
 let reminderEnable = true;
 
@@ -109,12 +148,14 @@ const reminder = () => {
           headText.innerText = item.text;
           decription.innerText = item.decription;
           remminder.style.display = "block";
+          complete()
+          // showCompleteData()
         } else {
           remminder.style.display = "none";
         }
       });
     }
-  }, 10000);
+  }, 1000);
 };
 
 skipButton.addEventListener("click", () => {
@@ -126,20 +167,24 @@ skipButton.addEventListener("click", () => {
 
   setTimeout(() => {
     reminderEnable = true;
-  }, 30000);
+  }, 50000);
 });
 
-const completedData = [];
-let addDataA = () => {
-  completedData.push({
-    text: text,
-    decription: decription,
-    date: date,
-  });
-  localStorage.setItem("data", JSON.stringify(data));
-  console.log("data", data);
-  incompleteTaskDelete();
-};
+const remindLater = document.getElementById('remindLater')
+remindLater.addEventListener('click', () => {
+  const remminder = document.getElementById("main-header");
+  remminder.style.display = "none";
+
+  reminderEnable = false;
+  clearInterval(clear);
+
+  setTimeout(() => {
+    reminderEnable = true;
+  }, 20000);
+})
+
+let completedData = [];
+
 const incompleteTaskDelete = (taskData, index) => {
   let checkAndComplete = () => {
     const completeTask = document.getElementById("completeTaskk");
@@ -147,37 +192,32 @@ const incompleteTaskDelete = (taskData, index) => {
     const gethours = localDate.getHours();
     const getMinutes = localDate.getMinutes();
     const concatMinHours = `${gethours}:${getMinutes}`;
-
     const filterData = data.filter(
       (item) => item.date === concatMinHours && item.text === taskData.text
     );
+    completeTask.innerHTML = "";
     console.log("filterData", filterData);
-    if (filterData.length > 0) {
-      filterData.map((item) => {
-        notask.innerHTML = "";
-        let completeDiv = document.createElement("div");
-        completeDiv.innerHTML = `
+    filterData.forEach((item) => {
+      notask.innerHTML = "";
+      let completeDiv = document.createElement("div");
+      completeDiv.innerHTML = `
               <div class="completeTask"  id="completeTask">
-                <label class="custom-checkbox-wrapper" for="custom-checkbox">
-                  <input onclick="checkbox" type="checkbox" checked name="checkbox" id="checkboxComplete">
+                <label class="custom-checkbox-wrapper" id="checkboxCompletee" for="custom-checkbox">
+                  <input type="checkbox" checked name="checkbox" id="checkboxComplete">
                   <span class="checkbox"></span>
                 </label>
                 <h3>${item.text}</h3>
               </div>`;
-        completeTask.appendChild(completeDiv);
+      completeTask.appendChild(completeDiv);
+      completedData.push(...filterData);
+    });
 
-        // incompleteTask.removeChild()
-        completedData.push(...filterData);
-      });
-      const taskDataRemove = data.findIndex((item) => item === taskData);
-      if (taskDataRemove !== -1) {
-        data.splice(taskDataRemove, 1);
-      }
-    }
+
   };
   checkAndComplete();
 };
-console.log("completedData", completedData);
+
+
 
 let active = () => {
   if (teskActive == true) {
@@ -190,9 +230,10 @@ let active = () => {
 active();
 
 (() => {
-  data = JSON.parse(localStorage.getItem("completedData")) || [];
-  incompleteTaskDelete();
+  completedData = JSON.parse(localStorage.getItem("completedData")) || [];
+  // incompleteTaskDelete();
 })();
+
 
 (() => {
   data = JSON.parse(localStorage.getItem("data")) || [];
